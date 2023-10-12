@@ -37,7 +37,7 @@ console.log('is show all ', isShowAll)
                       <h2 class="card-title">${phone.phone_name}</h2>
                       <p>If a dog chews shoes whose shoes does he choose?</p>
                       <div class="card-actions justify-center">
-                        <button onclick="handleShowDetail('${phone.slug}')";
+                        <button onclick="handleShowDetail('${phone.slug}');
                         show_details_modal.showModal()" class="btn btn-primary">show details</button>
                       </div>
                     </div>
@@ -58,6 +58,10 @@ const handleShowDetail = async(id)=>{
   showPhoneDetails(data)
 }
 const showPhoneDetails = (phone) => {
+  console.log(phone);
+  const phoneName =document.getElementById('show-detail-phone-name');
+  phoneName.innerText = phone.name;
+
   // show the modal
   show_detail_Modal.showModal();
 }
